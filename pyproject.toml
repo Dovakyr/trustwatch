@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trustwatch"
+version = "0.4.0"
+description = "OSS publish trust scanner — find single points of failure before they become incidents"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+]
+
+[project.scripts]
+trustwatch = "trustwatch.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/trustwatch/trustwatch"
+Changelog = "https://github.com/trustwatch/trustwatch/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-dir]
+"" = "."
